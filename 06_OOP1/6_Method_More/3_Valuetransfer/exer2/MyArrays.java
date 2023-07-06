@@ -1,5 +1,3 @@
-package com.atguigu05.method_more._03valuetransfer.exer2;
-
 /**
  * ClassName: MyArrays
  * Description:

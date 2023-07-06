@@ -1,5 +1,3 @@
-package com.atguigu05.method_more._04recursion.exer2;
-
 /**
  * ClassName: RabbitExer
  * Description:
@@ -16,12 +14,12 @@ public class RabbitExer {
 
     }
 
-    public int getRabbitNumber(int month){
-        if(month == 1){
+    public int getRabbitNumber(int month) {
+        if (month == 1) {
             return 1;
-        }else if(month == 2){
+        } else if (month == 2) {
             return 1;
-        }else{
+        } else {
             return getRabbitNumber(month - 1) + getRabbitNumber(month - 2);
         }
     }

@@ -1,5 +1,3 @@
-package com.atguigu05.method_more._03valuetransfer;
-
 /**
  * ClassName: ValueTransferTest3
  * Description:
@@ -19,27 +17,26 @@ public class ValueTransferTest3 {
 
         System.out.println("m = " + data.m + ", n = " + data.n);
 
-        //操作1：
-//        int temp = data.m ;
-//        data.m = data.n;
-//        data.n = temp;
+        // 操作1：
+        // int temp = data.m ;
+        // data.m = data.n;
+        // data.n = temp;
 
-        //操作2：
+        // 操作2：
         test.swap(data);
         System.out.println("m = " + data.m + ", n = " + data.n);
 
     }
 
-    public void swap(Data data){
-        int temp = data.m ;
+    public void swap(Data data) {
+        int temp = data.m;
         data.m = data.n;
         data.n = temp;
     }
 
-
 }
 
-class Data{
+class Data {
     int m;
     int n;
 }

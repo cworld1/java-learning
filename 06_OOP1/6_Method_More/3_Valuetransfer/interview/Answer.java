@@ -1,5 +1,3 @@
-package com.atguigu05.method_more._03valuetransfer.interview;
-
 import java.io.PrintStream;
 
 /**
