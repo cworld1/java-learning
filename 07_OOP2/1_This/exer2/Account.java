@@ -14,6 +14,9 @@ public class Account {
         this.balance = init_balance;
     }
 
+    public Account(int i, int j, double d) {
+    }
+
     public double getBalance() {
         return balance;
     }
@@ -34,5 +37,13 @@ public class Account {
         } else {
             System.out.println("取款数额有误或余额不足");
         }
+    }
+
+    public String getId() {
+        return null;
+    }
+
+    public int getAnnualInterestRate() {
+        return 0;
     }
 }
