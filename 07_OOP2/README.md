@@ -340,3 +340,106 @@ class DogTest{
    1. 建议在向下转型之前，使用 instanceof 进行判断，避免出现类型转换异常
    2. 格式： a instanceOf A : 判断对象 a 是否是类 A 的实例。
    3. 如果 a instanceOf A 返回 true，则：a instanceOf superA 返回也是 true。其中，A 是 superA 的子类。
+
+## Object 类的概述
+
+1. Object 类的说明
+
+   - 明确：java.lang.Object
+   - 任何一个 Java 类（除 Object 类）都直接或间接的继承于 Object 类
+   - Object 类称为 java 类的根父类
+   - Object 类中声明的结构（属性、方法等）就具有通用性。
+
+     - Object 类中没有声明属性
+     - Object 类提供了一个空参的构造器
+     - 重点关注：Object 类中声明的方法
+
+2. 常用方法
+
+   - 重点方法：equals() \ toString()
+   - 了解方法：clone() \ finalize()
+   - 目前不需要关注：getClass() \ hashCode() \ notify() \ notifyAll() \ wait() \ wait(xx) \ wait(xx,yy)
+
+   面试题：final 、 finally 、 finalize 的区别
+
+3. equals()的使用
+
+   3.1 适用性：
+
+   任何引用数据类型都可以使用。
+
+   3.2 `java.lang.Object` 类中 `equals()` 的定义：
+
+   ```java
+   public boolean equals(Object obj) {
+      return (this == obj);
+   }
+   ```
+
+   3.3 子类使用说明：
+
+   自定义的类在没有重写 Object 中 equals()方法的情况下，调用的就是 Object 类中声明的 equals()，比较两个对象的引用地址是否相同。（或比较两个对象是否指向了堆空间中的同一个对象实体）
+
+   对于像 String、File、Date 和包装类等，它们都重写了 Object 类中的 equals()方法，用于比较两个对象的实体内容是否相等。
+
+   3.4 开发中使用说明：
+
+   实际开发中，针对于自定义的类，常常会判断两个对象是否 equals()，而此时主要是判断两个对象的属性值是否相等。
+
+   所以：我们要重写 Object 类的 equals()方法。
+
+   如何重写:
+
+   - 手动自己实现
+   - 调用 IDEA 自动实现（推荐）
+
+   高频面试题： 区分 == 和 equals()
+
+   ==：运算符
+   ① 使用范围：基本数据类型、引用数据类型
+   ② 基本数据类型：判断数据值是否相等
+
+   ```java
+   int i1 = 10;
+   int i2 = 10;
+   sout(i1 == i2);//true
+
+   char c1 = 'A';
+   int i3 = 65;
+   sout(c1 == i3);//true
+
+   float f1 = 12.0F;
+   int i4 = 12;
+   sout(f1 == i4);//true
+   ```
+
+   引用数据类型变量：比较两个引用变量的地址值是否相等。（或比较两个引用是否指向同一个对象实体）
+
+   equals()：方法
+
+   - 使用范围：只能使用在引用数据类型上。
+   - 具体使用：对于类来说，重写 equals()和不重写 equals()的区别。
+
+4. toString()的使用
+
+   4.1 Object 类中 toString()的定义：
+
+   ```java
+   public String toString() {
+      return getClass().getName() + "@" + Integer.toHexString(hashCode());
+   }
+   ```
+
+   4.2 开发中的使用场景
+
+   平时我们在调用 `System.out.println()` 打印对象引用变量时，其实就调用了对象的 `toString()`
+
+   4.3 子类使用说明：
+
+   自定义的类，在没有重写 Object 类的 toString()的情况下，默认返回的是当前对象的地址值。
+
+   像 String、File、Date 或包装类等 Object 的子类，它们都重写了 Object 类的 toString()，在调用 toString()时，返回当前对象的实体内容。
+
+   4.4 开发中使用说明：
+
+   习惯上，开发中对于自定义的类在调用 toString()时，也希望显示其对象的实体内容，而非地址值。这时候，就需要重写 Object 类中的 toString().
