@@ -6,11 +6,32 @@
  */
 public class Test1 {
     public static void main(String[] args) {
-        // int a;
-        // System.out.println(a); // 报错：变量a未初始化
         int[] arr = new int[3];
         for (int i = 0; i < arr.length; i++) {
             System.out.println(++arr[i]);
         }
     }
+
+    int a;
+
+    public Test1() {
+    }
+
+    public Test1(int a) {
+        this.a = a;
+    }
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    @Override
+    public String toString() {
+        return "Test1 [a=" + a + "]";
+    }
+    
 }
