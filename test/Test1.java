@@ -1,3 +1,5 @@
+package test;
+
 /**
  * Description: A simple project for test.
  * 
