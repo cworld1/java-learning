@@ -1,5 +1,4 @@
 package e_oop1.i_constructor;
-import java.util.Scanner;
 
 /**
  * ClassName: PersonTest
@@ -18,9 +17,6 @@ public class PersonTest {
 
         Person p2 = new Person(1);
         System.out.println(p2.age); //1
-
-
-        Scanner scan = new Scanner(System.in);
 
     }
 }
