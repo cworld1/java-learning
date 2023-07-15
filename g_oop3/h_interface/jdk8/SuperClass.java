@@ -9,7 +9,6 @@ package g_oop3.h_interface.jdk8;
  * @Version 1.0
  */
 public class SuperClass {
-
     public void method4() {
         System.out.println("SuperClass:深圳");
     }

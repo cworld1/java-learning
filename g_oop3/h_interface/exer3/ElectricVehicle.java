@@ -17,11 +17,13 @@ public class ElectricVehicle extends Vehicle implements IPower {
         super(brand, color);
     }
 
+    // 重写的抽象类的抽象方法
     @Override
     public void run() {
         System.out.println("电动车通过电机驱动行驶");
     }
 
+    // 实现的接口的抽象方法
     @Override
     public void power() {
         System.out.println("电动车使用电力提供动力");

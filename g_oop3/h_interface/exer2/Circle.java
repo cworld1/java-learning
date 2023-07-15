@@ -9,7 +9,7 @@ package g_oop3.h_interface.exer2;
  * @Version 1.0
  */
 public class Circle {
-    private double radius;//半径
+    private double radius;// 半径
 
     public Circle() {
     }

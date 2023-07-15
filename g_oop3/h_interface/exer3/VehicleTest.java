@@ -22,9 +22,12 @@ public class VehicleTest {
         for (int i = 0; i < vehicles.length; i++) {
             developer.takingVehicle(vehicles[i]);
 
+            // 判断当前对象是否实现了IPower接口
             if (vehicles[i] instanceof IPower) {
+                System.out.print(" -> ");
                 ((IPower) vehicles[i]).power();
             }
+            System.out.println();
         }
 
     }

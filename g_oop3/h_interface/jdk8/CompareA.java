@@ -10,7 +10,7 @@ package g_oop3.h_interface.jdk8;
  */
 public interface CompareA {
 
-    // 属性：声明为public static final
+    // 属性：声明为 public static final
     // 方法：jdk8之前：只能声明抽象方法
 
     // 方法：jdk8中：静态方法

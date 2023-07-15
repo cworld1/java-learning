@@ -9,7 +9,6 @@ package g_oop3.h_interface.exer3;
  * @Version 1.0
  */
 public class Car extends Vehicle implements IPower {
-
     private String carNumber;
 
     public Car() {
@@ -28,11 +27,13 @@ public class Car extends Vehicle implements IPower {
         this.carNumber = carNumber;
     }
 
+    // 重写的抽象类的抽象方法
     @Override
     public void run() {
         System.out.println("汽车通过内燃机驱动行驶");
     }
 
+    // 实现的接口的抽象方法
     @Override
     public void power() {
         System.out.println("汽车通过汽油提供动力");

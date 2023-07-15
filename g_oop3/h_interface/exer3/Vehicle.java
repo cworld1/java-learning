@@ -36,5 +36,5 @@ public abstract class Vehicle {
         this.color = color;
     }
 
-    public abstract void run();
+    public abstract void run(); // 抽象类不能省略abstract关键字，可以省略的是interface
 }

@@ -12,17 +12,16 @@ public class USBTest {
 
     public static void main(String[] args) {
 
-        // 1.创建接口实现类的对象
         Computer computer = new Computer();
-        Printer printer = new Printer();
 
+        // 1.创建接口实现类的对象
+        Printer printer = new Printer();
         computer.transferData(printer);
 
         // 2.创建接口实现类的匿名对象
         computer.transferData(new Camera());
-        System.out.println();
 
-        // 3.创建接口匿名实现类的对象
+        // 3.创建接口匿名实现类的对象（使用起来有点像抽象类。？）
         USB usb1 = new USB() {
             public void start() {
                 System.out.println("U盘开始工作");
@@ -35,7 +34,6 @@ public class USBTest {
         computer.transferData(usb1);
 
         // 4. 创建接口匿名实现类的匿名对象
-
         computer.transferData(new USB() {
             public void start() {
                 System.out.println("扫描仪开始工作");
@@ -51,16 +49,16 @@ public class USBTest {
 }
 
 class Computer {
-
     public void transferData(USB usb) { // 多态：USB usb = new Printer();
         System.out.println("设备连接成功....");
-        usb.start();
 
+        usb.start();
         System.out.println("数据传输的细节操作....");
 
         usb.stop();
+        System.out.println("设备断开连接....");
+        System.out.println();
     }
-
 }
 
 class Camera implements USB {
@@ -95,6 +93,5 @@ interface USB {
 
     // 方法
     public abstract void start();
-
     void stop();
 }

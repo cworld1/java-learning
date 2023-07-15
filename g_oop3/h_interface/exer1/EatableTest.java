@@ -19,7 +19,6 @@ public class EatableTest {
 
         for (int i = 0; i < eatables.length; i++) {
             eatables[i].eat();
-
         }
     }
 }

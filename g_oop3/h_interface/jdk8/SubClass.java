@@ -15,7 +15,14 @@ public class SubClass extends SuperClass implements CompareA, CompareB {
         System.out.println("SubClass:上海");
     }
 
+    // 类实现了两个接口，而两个接口中定义了同名同参数的默认方法。必须重写此方法。
+    @Override
     public void method3() {
+        // 调用父方法
+        // CompareA.super.method3();
+        // CompareB.super.method3();
+
+        // 调用自己类中的方法（重写）
         System.out.println("SubClass:广州");
     }
 
